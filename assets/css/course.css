@@ -1,0 +1,190 @@
+.navigation{
+	padding-left: 30px;
+	padding-right: 0px;
+}
+.navigation p{
+	font-family: Inter;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 28px;
+	line-height: 34px;
+
+	color: #011F3B;
+}
+.navigation ul{
+	display:flex;
+	list-style:none;
+	padding-left: 10px;
+}
+
+.navigation ul li{
+	padding-left: 50px;
+	float: left;
+}
+.navigation ul li a{
+	font-family: Inter;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 17px;
+	line-height: 21px;
+	color: rgba(118, 132, 146, 0.8);
+}
+.active{
+	color: #5E81F4!important;
+}
+.line{
+	height: 2px;
+	width: 100%; 
+	margin-top: 2px;
+	background-color: #5E81F4;
+	border-radius: 0px;
+}
+section#lessons{
+	padding: 0px 20px 0px 20px;
+}
+section#lessons .each{
+	padding: 10px 86px 10px 86px;
+	height: 380px;
+}
+
+section#lessons .each .lesson{
+	padding: 20px;
+
+	height: 380px;
+	background: #FFFFFF;
+	border: 1px solid #BFC9ED;
+	box-sizing: border-box;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+}
+section#lessons .each .lesson .video{
+	background-image: url("../icons/video.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	height: 172px;
+	border-radius: 10px;
+}
+.prosmotreno{
+	height:55px;
+	width: 103px;
+	background-image: url("../icons/prosmptreno.png");
+
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	margin-top: -370px;
+	margin-left: -20px;
+	padding-top: 18px;
+}
+.prosmotreno p{
+	font-family: Inter;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 12px;
+	color: #FFFFFF;
+}
+section#lessons .each .lesson .less-name{
+	margin-top: 10px;
+	font-family: Inter;
+	font-style: normal;
+	font-weight: bolder;
+	font-size: 16px;
+	line-height: 21px;
+	color: #011F3B;
+}
+section#lessons .each .lesson .liked-lesson{
+	margin-top: 10px;
+}
+section#lessons .each .lesson .viewer, .comments{
+	font-family: Inter;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 17px;
+	line-height: 21px;
+
+	color: #8DA1B5;
+}
+
+section#lessons .each .lesson .author{
+	font-family: Inter;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 17px;
+	line-height: 15px;
+
+	color: #011F3B;
+}
+section#lessons .each .lesson .job{
+	font-family: Inter;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	line-height: 13px;
+
+	color: #768492;
+}
+hr{
+	margin-left: -20px;
+	margin-right:-20px;
+	border: 1px solid #BFC9ED;
+}
+@media (min-width: 862px) and (max-width: 1024px){
+	.navigation ul{
+		margin-left: -150px!important;
+	}
+	.author-course{
+		position: absolute;
+		top: 77%;
+		right: 7%;
+	}
+	section#lessons{
+		padding: 0px 20px 0px 30px;
+	}
+	section#lessons .each{
+		padding: 10px 100px 10px 100px;
+		height: 380px;
+	}
+
+	section#lessons .each .lesson{
+		padding: 40px;
+		height: 380px;
+	}
+	hr{
+		margin-left: -10px;
+		margin-right:-10px;
+	}
+	.prosmotreno{
+		margin-top: -360px;
+		margin-left: -10px;
+	}
+	.prosmotreno p{
+		font-size: 12px;
+		line-height: 14px;
+		color: #FFFFFF;
+	}
+}
+
+@media (min-width: 1024px) and (max-width: 1440px){
+	.navigation ul{
+		margin-left: -70px;
+	}
+	section#lessons{
+		padding: 0px 10px 0px 10px;
+	}
+	section#lessons .each{
+		padding: 0px 40px 0px 40px;
+		height: 380px;
+	}
+
+	section#lessons .each .lesson{
+		padding: 10px;
+		height: 380px;
+	}
+	hr{
+		margin-left: -10px;
+		margin-right:-10px;
+	}
+}
+
