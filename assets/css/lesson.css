@@ -316,8 +316,72 @@ margin-top: 5px;
     pointer-events: none;
     color: #aaa;
 }
+#lesson{
+	padding: 40px;
+}
 
+#lesson>.lesson-name{
+	font-family: Inter;
+	font-style: normal;
+	font-weight: 550;
+	font-size: 24px;
+	line-height: 30px;
 
+	color: #011F3B;
+	}
+#lesson>.lesson-description iframe{
+	border-radius: 10px;
+	width: 100%;
+	height: 400px;
+}
+#lesson>.lesson-description{
+	background: #FFFFFF;
+	border-radius: 10px;
+}
+#lesson>.lesson-description .viewer{
+	padding: 10px 20px;
+	border-bottom: 1px solid #E4E5E6;
+}
+#lesson>.lesson-description .viewer .count{
+	margin-top: 10px;
+}
+#lesson>.lesson-description .viewer p{
+	font-family: Inter;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	line-height: 18px;
+
+	color: #768492;
+}
+#lesson>.lesson-description .description{
+	padding: 10px 20px 10px 20px;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 13px;
+	line-height: 18px;
+	display: flex;
+	align-items: center;
+
+	color: #000000;
+
+	border-bottom: 1px solid #E4E5E6
+}
+.lesson-footer{
+	padding: 20px 20px 10px 20px;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 15px;
+	line-height: 18px;	
+
+	color: #455A64;
+}
+.lesson-footer img{
+	width: 30px;
+	height: auto;
+}	
 @media screen and (max-width: 862px) {
 	#progressbar {
 	margin-left: 85px;
