@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<!-- JavaScript -->
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<style>
+  #full_slider .slide-content {
+  position: relative;
+  height: 100vh;
+  width: 70vw;
+  justify-content: center;
+  align-items: center;
+}
+
+#full_slider .slide-content .video-caption {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transition: all 500ms;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 600px;
+  color: #fff;
+}
+#full_slider .slide-content .allcases {
+  font-size: 18px;
+  margin-top: auto;
+  display: none;
+}
+#full_slider .slide-content .allcases a {
+  color: #fff;
+}
+
+
+#full_slider video {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: auto;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+}
+#full_slider h3 {
+  font-weight: 900;
+  font-size: 100px;
+}
+</style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="main-carousel" id="full_slider">
+      <div class="carousel-cell is-selected">
+        <div class="slide-content">
+          <video src="https://code-love.tk/demos/prop/video/eroi.mp4" autoplay loop muted></video>
+          <div class="video-caption">
+            <h3 class="capt text-boldest">All about us</h3>
+            <p class="allcases">
+              <a class="inherit" href="#">See more</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-cell">
+        <div class="slide-content">
+          <video src="https://code-love.tk/demos/prop/video/eroi.mp4" autoplay loop muted></video>
+          <div class="video-caption">
+            <h3 class="capt text-boldest">Lorem ipsum dolor</h3>
+            <p class="allcases">
+              <a class="inherit" href="#">See more</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-cell">
+        <div class="slide-content">
+          <video src="https://code-love.tk/demos/prop/video/eroi.mp4" autoplay loop muted></video>
+          <div class="video-caption">
+            <h3 class="capt text-boldest">Falling in love</h3>
+            <p class="allcases">
+              <a class="inherit" href="#">See more</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-cell">
+        <div class="slide-content">
+          <video src="https://code-love.tk/demos/prop/video/eroi.mp4" autoplay loop muted></video>
+          <div class="video-caption">
+            <h3 class="capt text-boldest">Coffe</h3>
+            <p class="allcases">
+              <a class="inherit" href="#">See more</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-cell">
+        <div class="slide-content">
+          <video src="https://code-love.tk/demos/prop/video/eroi.mp4" autoplay loop muted></video>
+          <div class="video-caption">
+            <h3 class="capt text-boldest">Dealing with danger</h3>
+            <p class="allcases">
+              <a class="inherit" href="#">See more</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $('#full_slider').flickity({
+        wrapAround: true,
+        on: {
+          ready: function() {
+              $('.carousel-cell:first-child()').find('video').get(0).play();
+          },
+          change: function( index ) {
+              $('.is-selected').find('video').get(0).play();
+          }
+      }
+    });
+  </script>
+</body>
+</html>

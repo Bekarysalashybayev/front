@@ -1,0 +1,164 @@
+<style>
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+ :focus {
+   outline: none;
+}
+ a {
+   color: inherit;
+}
+ html, body {
+   height: 100%;
+}
+ body {
+   font-family: "Roboto", sans-serif;
+}
+ .carousel .item {
+   height: 100vh;
+   width: 100vw;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+ .carousel .item .bg {
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   overflow: hidden;
+   z-index: 1;
+}
+ .carousel .item .bg video {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   object-position: center;
+}
+ .carousel .item .content {
+   position: absolute;
+   color: #fff;
+   z-index: 2;
+}
+ .carousel .item .content h1 {
+   font-size: 6em;
+   font-weight: 900;
+   line-height: 1;
+   width: max-content;
+}
+ .carousel .item .content a {
+   font-size: 1.2em;
+   line-height: 1;
+   font-weight: 300;
+   text-decoration: none;
+   position: relative;
+}
+ .carousel .item .content a::after {
+   content: "";
+   position: absolute;
+   left: -1px;
+   bottom: -2px;
+   height: 1px;
+   background-color: #fff;
+   width: 0px;
+   cursor: pointer;
+   transition: all ease-in-out 0.2s;
+}
+ .carousel .item .content a:hover::after {
+   width: calc(100% + 1px);
+}
+ .carousel .item.is-selected .content {
+   transform: translateX(0px);
+}
+ .carousel .item.is-before-selected .content {
+   transform: translateX(calc(( (100vw - 100%)/2 + 5vw )));
+}
+ .carousel .item.is-after-selected .content {
+   transform: translateX(calc(( (100vw - 100%)/2 + 5vw )*-1));
+}
+ .carousel .flickity-prev-next-button {
+   height: 100%;
+   width: 5vw;
+   border-radius: 0;
+   background-color: transparent;
+}
+ .carousel .flickity-prev-next-button.next {
+   right: 0;
+}
+ .carousel .flickity-prev-next-button.previous {
+   left: 0;
+}
+ .carousel .flickity-prev-next-button:focus {
+   box-shadow: none;
+}
+ .carousel .flickity-prev-next-button svg {
+   display: none;
+}
+ 
+
+</style>
+<div class="carousel">
+  <div class="item">
+    <div class="bg">
+      <video src="https://code-love.tk/demos/prop/video/eroi.mp4" muted autoplay loop playsinline></video>
+    </div>
+    <div class="content">
+      <h1>All about us</h1>
+      <a href="#">See more</a>
+    </div>
+  </div>
+  <div class="item">
+    <div class="bg">
+      <video src="https://code-love.tk/demos/prop/video/heineken.mp4" muted autoplay loop playsinline></video>
+    </div>
+    <div class="content">
+      <h1>Falling in love</h1>
+      <a href="#">See more</a>
+    </div>
+  </div>
+</div>
+<script>
+  var flkty = new Flickity(".carousel", {
+  pageDots: false
+});
+
+flkty.on("select", () => {
+  flkty.element.querySelector(".item.is-before-selected") &&
+  flkty.element.querySelector(".item.is-before-selected").classList.remove("is-before-selected");
+  
+  flkty.element.querySelector(".item.is-after-selected") && 
+  flkty.element.querySelector(".item.is-after-selected").classList.remove("is-after-selected");
+  
+  flkty.element.querySelector(".item.is-selected").previousSibling && 
+  flkty.element.querySelector(".item.is-selected").previousSibling.classList.add("is-before-selected");
+  
+  flkty.element.querySelector(".item.is-selected").nextSibling &&
+  flkty.element.querySelector(".item.is-selected").nextSibling.classList.add("is-after-selected");
+  
+  [...flkty.element.querySelectorAll(".item h1")]
+    .forEach(h1 => h1.style.transform = "")
+  
+})
+flkty.resize()
+
+flkty.on("scroll", (event, totalProgress) => {
+  for(let content of flkty.element.querySelectorAll(".item .content")){
+    let progressFactor = 
+        (flkty.x + flkty.selectedCell.target) /
+        flkty.selectedCell.size.width;
+    console.log(progressFactor);
+    content.style.marginLeft =
+    `calc( 
+      (
+        (100vw - ${content.offsetWidth}px})/2 +
+        5vw
+      )*${progressFactor*-1}
+    )`
+  }
+}); 
+</script>
